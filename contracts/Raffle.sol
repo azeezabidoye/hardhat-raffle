@@ -12,10 +12,13 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.24;
 
+// Imports
+import "@chainlink/contracts@1.1.1/src/v0.8/vrf/dev/VRFConsumerBaseV2Plus.sol";
+
 // Error Codes
 error Raffle__NotEnoughETHEntered();
 
-contract Raffle {
+contract Raffle is VRFConsumerBaseV2Plus {
     /* State Variables */
 
     // An Immutable private variable to specify the entry-amount for the raffle
