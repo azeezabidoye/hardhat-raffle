@@ -28,7 +28,10 @@ contract Raffle is VRFConsumerBaseV2Plus {
     /* Events */
     event RaffleEnter(address player);
 
-    constructor(uint256 entranceFee) {
+    constructor(
+        address vrfCoordinatorV2Plus,
+        uint256 entranceFee
+    ) VRFConsumerBaseV2Plus(vrfCoordinatorV2Plus) {
         i_entranceFee = entranceFee;
     }
 
@@ -45,9 +48,13 @@ contract Raffle is VRFConsumerBaseV2Plus {
         emit RaffleEnter(msg.sender);
     }
 
-    // function pickRandomWinner() {
+    // Function to request for a random number
+    // function requestRandomWinner() {
 
     // }
+
+    // Function to execute a task with the random number generated
+    // function fulfillRandomWords(uint256 requestId, uint256[] memory randomWords) internal override;
 
     // Getter function for entranceFee
     function getEntranceFee() public view returns (uint256) {
