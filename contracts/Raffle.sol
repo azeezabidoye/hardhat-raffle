@@ -10,10 +10,12 @@
 // Automated Execution -- Chainlink keepers
 
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.24;
+pragma solidity ^0.8.19;
 
 // Imports
-import "@chainlink/contracts@1.1.1/src/v0.8/vrf/dev/VRFConsumerBaseV2Plus.sol";
+// import "@chainlink/contracts@1.1.1/src/v0.8/vrf/dev/VRFConsumerBaseV2Plus.sol";
+import "@chainlink/contracts/src/v0.8/vrf/dev/VRFConsumerBaseV2.sol";
+// import {VRFConsumerBaseV2Plus} from "@chainlink/contracts/src/v0.8/vrf/dev/VRFConsumerBaseV2Plus.sol";
 
 // Error Codes
 error Raffle__NotEnoughETHEntered();
@@ -54,7 +56,7 @@ contract Raffle is VRFConsumerBaseV2Plus {
     // }
 
     // Function to execute a task with the random number generated
-    // function fulfillRandomWords(uint256 requestId, uint256[] memory randomWords) internal override;
+    // function fulfillRandomWords(uint256 requestId, uint256[] memory randomWords) internal override{};
 
     // Getter function for entranceFee
     function getEntranceFee() public view returns (uint256) {
