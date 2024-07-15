@@ -13,14 +13,16 @@
 pragma solidity ^0.8.19;
 
 // Imports
-// import "@chainlink/contracts@1.1.1/src/v0.8/vrf/dev/VRFConsumerBaseV2Plus.sol";
-import "@chainlink/contracts/src/v0.8/vrf/dev/VRFConsumerBaseV2.sol";
+// import "@chainlink/contracts@1.1.1/src/v0.8/vrf/dev/VRFConsumerBaseV2Plus.sol";  // Error with /dev/
+// import "@chainlink/contracts/src/v0.8/vrf/VRFConsumerBaseV2Plus.sol";
+import "@chainlink/contracts/src/v0.8/vrf/VRFConsumerBaseV2.sol";
+// import "@chainlink/contracts/src/v0.8/vrf/dev/VRFConsumerBaseV2.sol";    // Error with /dev/
 // import {VRFConsumerBaseV2Plus} from "@chainlink/contracts/src/v0.8/vrf/dev/VRFConsumerBaseV2Plus.sol";
 
 // Error Codes
 error Raffle__NotEnoughETHEntered();
 
-contract Raffle is VRFConsumerBaseV2Plus {
+contract Raffle is VRFConsumerBaseV2 {
     /* State Variables */
 
     // An Immutable private variable to specify the entry-amount for the raffle
@@ -31,9 +33,9 @@ contract Raffle is VRFConsumerBaseV2Plus {
     event RaffleEnter(address player);
 
     constructor(
-        address vrfCoordinatorV2Plus,
+        address vrfCoordinatorV2,
         uint256 entranceFee
-    ) VRFConsumerBaseV2Plus(vrfCoordinatorV2Plus) {
+    ) VRFConsumerBaseV2(vrfCoordinatorV2) {
         i_entranceFee = entranceFee;
     }
 
