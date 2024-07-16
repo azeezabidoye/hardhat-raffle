@@ -13,10 +13,10 @@
 pragma solidity ^0.8.19;
 
 // Imports
-// import "@chainlink/contracts@1.1.1/src/v0.8/vrf/dev/VRFConsumerBaseV2Plus.sol";  // Error with /dev/
+// import "@chainlink/contracts@1.1.1/src/v0.8/vrf/dev/VRFConsumerBaseV2Plus.sol"; // Error with /dev/
 // import "@chainlink/contracts/src/v0.8/vrf/VRFConsumerBaseV2Plus.sol";
-import "@chainlink/contracts/src/v0.8/vrf/VRFConsumerBaseV2.sol";
-// import "@chainlink/contracts/src/v0.8/vrf/dev/VRFConsumerBaseV2.sol";    // Error with /dev/
+// import "@chainlink/contracts/src/v0.8/vrf/VRFConsumerBaseV2.sol"; // Error with /dev/
+import "../node_modules/@chainlink/contracts/src/v0.8/vrf/VRFConsumerBaseV2.sol";
 // import {VRFConsumerBaseV2Plus} from "@chainlink/contracts/src/v0.8/vrf/dev/VRFConsumerBaseV2Plus.sol";
 
 // Error Codes
